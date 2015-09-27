@@ -1,0 +1,23 @@
+demo()
+lm.glm
+stats
+error.catching
+demo(error.catching)
+a<-available.packages()
+head(a,3)
+head(rownames(a),3)
+a<-available.packages()
+library(ggplot2)
+install.packages(c("ggplot2","devtools"))
+library(ggplot2) search()
+library(ggplot2): search()
+library(ggplot2) search()
+library(ggplot2)
+search()
+library(slidifiy)
+install.package("slidify")
+install.packages("slidify")
+install.package("pamr")
+setwd("./courserawork/week3project/UCI HAR Dataset/")
+dir()
+source("run_analysis.R")
