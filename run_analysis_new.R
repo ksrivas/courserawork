@@ -10,7 +10,7 @@ library(dplyr);library(Hmisc);
 #4.)Appropriately labels the data set with descriptive variable names.
 # 5.)From the data set in step 4, creates a second, independent tidy data 
 # set with the average of each variable for each activity and each subject.
-
+# THIS IS NOT FULLY FUNCTIONAL AND WSA DEVELOPED DURING THE TEST PHASE
 
 # Step 1. Merge: files are X_train.txt with labes from y_train.txt
 test_filedata<-file.path("./test/X_test.txt")
