@@ -7,6 +7,32 @@ a tidy data set containing the following variables.~ The variable names
 are extracted from the original dataset in the UCI_HAR_Dataset directory
 from the "features.txt" file.
 
+## Variables used in the program
+A description of the variables is provided in the program but
+summarized here
+
+|Variable       |  Description       |
+|------------|--------------------|
+|test_filedata | Stores path of the test file dataset X_test.txt          |
+|train_filedata| Stores path of the train file dataset X_train.txt|
+|test_filedataids |Stores path of the activity ids  file y_test.txt|
+|train_filedataids| Stores path of the activity ids file y_train.txt|
+|test_filesubids |Path of the subject id file of test data subject_test.txt|
+|train_filesubids |Path of the subject id file of train data subject_train.txt|
+|colnamesall   |Helper variable to store column names of the data sets as in features.txt|
+|dtest  |Test data from the test_filedata path|
+|dtrain| Train data from the train_filedata path|
+|dtest_ids| Activity ids of test data|
+|dtrain_ids |Activity ids of train data|
+|dtest_subids| Subject ids of test data|
+|dtrain_subids| Subject ids of train data|
+|dtesttrainmerge_all| Dataframe containing all the data including appropriate column names|
+|DataMeanStd| Mean of the data for question 2|
+|activitylabels| Activity labels of the data set as factor(See table below)|
+|dataset_beforetidying | Helper variable before the final output containing|
+|all but the first two columns (Subject id and Activity)|
+|tidydata_foroutput| Aggregate of the final desired data|
+
 The activity ids are mapped as follows as described in the original data set.
 
 ## Activity
