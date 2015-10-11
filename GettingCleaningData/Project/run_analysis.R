@@ -10,7 +10,7 @@ library(dplyr);library(Hmisc);
 #4.)Appropriately labels the data set with descriptive variable names.
 # 5.)From the data set in step 4, creates a second, independent tidy data 
 # set with the average of each variable for each activity and each subject.
-
+# Also refer to the codebook for a description of the variables used here.
 
 # Step 1. Merge: files are X_train.txt with labes from y_train.txt
 test_filedata<-file.path("./UCI_HAR_Dataset/test/X_test.txt")
@@ -66,10 +66,12 @@ dtesttrainmerge_all<-rbind(dtest_idbinds,dtrain_idbinds)
 # Elegant way. Much better than the above commented out way.
 # Left it uncommented for my future reference.
 
-#Final answer question 2
+#Final answer question 2: DataMeanStd contains the answer to Q 2
 DataMeanStd<-select(dtesttrainmerge_all,contains("mean"),contains("std"))
 
-#Question3: Get first activity labels: Activitynamed datasets
+#Question3: Get first activity labels: Activitynamed datasets: Now the
+# dtesttrainmerge_all data set contains all variables appropriately named 
+# exxcept ActivityID which will be dealt in the next step
 activitylabels<-read.table("./UCI_HAR_Dataset/activity_labels.txt")
 dtesttrainmerge_all[,2]<-factor(dtesttrainmerge_all[,2],
                                 labels=c(as.character(activitylabels[,"V2"])))
@@ -81,9 +83,10 @@ dtesttrainmerge_all[,2]<-factor(dtesttrainmerge_all[,2],
 names(dtesttrainmerge_all)[2]<-c("Activity") 
 # This is the complete dataset
 # Question 5
-# Split produces errors. Using aggregate function by mean...
-#This is a workaround and it works fine.
+
+#Some helper variable:This is a workaround and it works fine.
 dataset_beforetidying<-dtesttrainmerge_all[,3:dim(dtesttrainmerge_all)[2]]
+# This is the final data set which wil be output. 
 tidydata_foroutput<-aggregate(dataset_beforetidying, 
                               list(dtesttrainmerge_all$SubjectID, 
                                    dtesttrainmerge_all$Activity), mean)

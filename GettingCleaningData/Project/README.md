@@ -26,6 +26,7 @@ link here
 
 The data set must be unzipped and by default it creates the directory UCI HAR Dataset.
 The directory UCI HAR Dataset MUST be renamed to UCI_HAR_Dataset.
+This dataset however has also been provided in this repository.
 
 
 ## Running the script and output
